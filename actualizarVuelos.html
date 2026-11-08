@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Flight - Actualizar Vuelos</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="encabezado">
+    <a href="index.html" class="marca" style="text-decoration: none;">Happy Flight <span>Airline</span></a>
+
+    <div class="acciones-sesion"></div>
+  </header>
+
+  <main>
+    <section class="seccion">
+      <h2>Panel de Administración de Vuelos</h2>
+      <p class="subtitulo">Gestiona la información de los vuelos.</p>
+
+      <!-- Barra de búsqueda del agente -->
+      <form id="form-busqueda-admin" class="formulario busqueda" style="margin-bottom: 20px;">
+        <label>ID del Vuelo
+          <input type="text" id="filtro-id" placeholder="Ej. V001">
+        </label>
+        <label>Origen
+          <input type="text" id="filtro-origen" placeholder="Ej. Santo Domingo">
+        </label>
+        <label>Destino
+          <input type="text" id="filtro-destino" placeholder="Ej. Madrid">
+        </label>
+        <label>Fecha
+          <input type="date" id="filtro-fecha">
+        </label>
+        <button class="boton" type="submit">Buscar</button>
+      </form>
+
+      <!-- Lista de vuelos -->
+      <div id="lista-admin" class="resultados">
+        <!-- Se inyectan las tarjetas de vuelos aquí -->
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal de Edición -->
+  <div id="modal-editar" class="modal-overlay" hidden>
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Editar Vuelo <span id="edit-vuelo-id"></span></h3>
+        <button type="button" class="modal-close" id="btn-cerrar-editar">&times;</button>
+      </div>
+      
+      <form id="form-editar-vuelo" class="auth-form">
+        <label>Origen
+          <input type="text" id="edit-origen" required>
+        </label>
+        <label>Destino
+          <input type="text" id="edit-destino" required>
+        </label>
+        <label>Fecha de salida
+          <input type="date" id="edit-fecha" required>
+        </label>
+        <label>Hora de salida
+          <input type="time" id="edit-hora" required>
+        </label>
+        <label>Precio (DOP)
+          <input type="number" id="edit-precio" min="0" step="0.01" required>
+        </label>
+        <label>Asientos disponibles
+          <input type="number" id="edit-asientos" min="0" required>
+        </label>
+
+        <p id="edit-error" class="auth-error" hidden></p>
+
+        <div class="reserva-botones" style="margin-top: 15px; display: flex; gap: 10px;">
+          <button type="button" class="btn-sesion login" id="btn-cancelar-edit" style="flex: 1;">Cancelar</button>
+          <button type="submit" class="boton" style="flex: 1;">Guardar Cambios</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <footer>© 2026 Happy Flight Airline · Modo Administrador</footer>
+  <script src="js/actualizarVuelos.js"></script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Flight Airline - Mis Reservas</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="encabezado">
+    <a href="index.html" class="marca" style="text-decoration: none;">Happy Flight <span>Airline</span></a>
+
+    <div class="acciones-sesion"></div>
+  </header>
+
+  <main>
+    <section class="seccion">
+      <h2>Mis Reservas</h2>
+      <p class="subtitulo" id="bienvenida">Cargando tus reservas...</p>
+
+      <div id="lista-reservas" class="resultados">
+        <!-- Aquí se inyectarán las tarjetas de reservas -->
+      </div>
+    </section>
+  </main>
+
+    <!-- Modal de Cancelación -->
+  <div id="modal-cancelar" class="modal-overlay" hidden>
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Cancelar Reserva</h3>
+        <button type="button" class="modal-close" id="btn-cerrar-cancelar">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p>¿Estás seguro de que deseas cancelar tu vuelo a <strong id="cancel-destino"></strong>?</p>
+        
+        <div id="aviso-reembolso" class="pago-resumen" style="background: #e8f8ef; border-left: 4px solid #1e8449;">
+          <p><strong>Política de reembolso:</strong></p>
+          <p id="cancel-porcentaje-texto">Se te devolverá el 100% de lo que pagaste.</p>
+          <p class="pago-total" style="border-color: #a8d5b7;">Total a devolver: <span id="cancel-monto">RD$ 0.00</span></p>
+        </div>
+        
+        <div id="aviso-no-reembolsable" class="auth-error" hidden>
+          <p><strong>No es posible cancelar esta reserva.</strong></p>
+          <p id="motivo-no-cancelable"></p>
+        </div>
+
+        <div class="reserva-botones" style="margin-top: 20px; display: flex; gap: 10px;">
+          <button type="button" class="btn-sesion login" id="btn-abortar-cancelar" style="flex: 1;">Volver</button>
+          <button type="button" class="boton" id="btn-confirmar-cancelar" style="flex: 1; background: #c0392b; color: white;">Confirmar Cancelación</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>© 2026 Happy Flight Airline · Demo</footer>
+  
+  <!-- Reutilizamos la lógica de sesión del index -->
+  <script src="js/reservas.js"></script>
+
+
+</body>
+</html>

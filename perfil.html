@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Flight Airline - Mi Perfil</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="encabezado">
+    <a href="index.html" class="marca" style="text-decoration: none;">Happy Flight <span>Airline</span></a>
+
+    <div class="acciones-sesion"></div>
+  </header>
+
+  <main>
+    <section class="seccion auth" style="max-width: 650px;">
+      
+      <!-- Mensajes -->
+      <p id="perfil-error" class="auth-error" role="alert" hidden></p>
+      <p id="perfil-ok" class="auth-ok" role="status" hidden></p>
+
+      <!-- TARJETA DE MILLAS (Solo Ejecutivos) -->
+      <div id="tarjeta-millas" class="pago-millas" style="margin-bottom: 20px; text-align: center;" hidden>
+        <p style="margin: 0; font-size: 1rem;">Tus millas acumuladas:</p>
+        <p style="margin: 5px 0 0; font-size: 1.8rem; font-weight: bold; color: #b28500;">
+          <span id="perfil-millas">0</span> <span style="font-size: 1rem; color: #b28500;">millas</span>
+        </p>
+      </div>
+
+      <!-- MODO LECTURA -->
+      <div id="vista-lectura">
+        <h2>Mi Perfil</h2>
+        <p class="subtitulo">Esta es tu información personal registrada.</p>
+        
+        <div class="perfil-info-cards">
+          <div class="info-item" style="grid-column: 1/-1;">
+            <label>Nombre completo</label>
+            <span id="view-nombre">-</span>
+          </div>
+          <div class="info-item" style="grid-column: 1/-1;">
+            <label>Correo electrónico</label>
+            <span id="view-email">-</span>
+          </div>
+          <div class="info-item">
+            <label>Teléfono</label>
+            <span id="view-telefono">-</span>
+          </div>
+          <div class="info-item">
+            <label>Tipo de Cliente</label>
+            <span id="view-tipoCliente" style="text-transform: capitalize;">-</span>
+          </div>
+          <div class="info-item" style="grid-column: 1/-1;">
+            <label>Dirección</label>
+            <span id="view-direccion">-</span>
+          </div>
+        </div>
+
+        <div class="perfil-acciones">
+          <button type="button" class="boton" id="btn-editar-perfil">Editar Perfil</button>
+        </div>
+      </div>
+
+      <!-- MODO EDICIÓN -->
+      <div id="vista-edicion" hidden>
+        <h2>Editar Perfil</h2>
+        <p class="subtitulo">Actualiza tus datos personales.</p>
+
+        <form id="form-perfil" class="formulario auth-form" novalidate>
+          <label>Nombre completo
+            <input type="text" id="perfil-nombre" required>
+          </label>
+
+          <label>Correo electrónico
+            <input type="email" id="perfil-email" required readonly style="background: #f4f6f9; color: #8896a8; cursor: not-allowed;" title="El correo no se puede cambiar">
+          </label>
+
+          <label>Nueva Contraseña (Opcional)
+            <input type="password" id="perfil-password" placeholder="Dejar en blanco para no cambiar" minlength="4" autocomplete="new-password">
+          </label>
+
+          <label>Dirección
+            <input type="text" id="perfil-direccion" required>
+          </label>
+
+          <label>Teléfono
+            <input type="tel" id="perfil-telefono" required>
+          </label>
+
+          <label>Tipo de cliente
+            <input type="text" id="perfil-tipoCliente" disabled style="background: #f4f6f9; color: #8896a8; cursor: not-allowed; text-transform: capitalize;">
+          </label>
+
+          <div class="perfil-acciones" style="margin-top: 10px;">
+            <button type="button" class="btn-sesion login" id="btn-cancelar-edicion" style="flex: 1;">Cancelar</button>
+            <button type="submit" class="boton" id="btn-guardar" style="flex: 1;">Guardar cambios</button>
+          </div>
+        </form>
+      </div>
+
+    </section>
+  </main>
+
+  <footer>© 2026 Happy Flight Airline · Demo</footer>
+  <script src="js/perfil.js"></script>
+</body>
+</html>

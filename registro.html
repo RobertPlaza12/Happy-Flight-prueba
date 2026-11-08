@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Flight Airline - Registro</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="encabezado">
+    <a href="index.html" class="marca" style="text-decoration: none;">Happy Flight <span>Airline</span></a>
+
+    <div class="acciones-sesion">
+      <a href="login.html" class="btn-sesion login">Iniciar sesión</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="seccion auth">
+      <h2>Crear cuenta</h2>
+      <p class="subtitulo">Regístrate para reservar vuelos con Happy Flight Airline.</p>
+
+      <form id="form-registro" class="formulario auth-form" novalidate>
+        <label>Nombre completo
+          <input type="text" id="nombre" name="nombre" placeholder="Ej. Juan Pérez" required autocomplete="name">
+        </label>
+
+        <label>Correo electrónico
+          <input type="email" id="email" name="email" placeholder="tucorreo@ejemplo.com" required autocomplete="email">
+        </label>
+
+        <label>Contraseña
+          <input type="password" id="password" name="password" placeholder="Mínimo 4 caracteres" required minlength="4" autocomplete="new-password">
+        </label>
+
+        <label>Dirección
+          <input type="text" id="direccion" name="direccion" placeholder="Calle, número, ciudad" required autocomplete="street-address">
+        </label>
+
+        <label>Teléfono
+          <input type="tel" id="telefono" name="telefono" placeholder="Ej. 809-555-1234" required autocomplete="tel">
+        </label>
+
+        <label>Tipo de cliente
+          <select id="tipoCliente" name="tipoCliente" required>
+            <option value="" disabled selected>Selecciona una opción</option>
+            <option value="minorista">Minorista</option>
+            <option value="ejecutivo">Ejecutivo</option>
+          </select>
+        </label>
+
+        <p id="registro-error" class="auth-error" role="alert" hidden></p>
+        <p id="registro-ok" class="auth-ok" role="status" hidden></p>
+
+        <button class="boton" type="submit" id="btn-registro">Crear cuenta</button>
+
+        <p class="auth-alt">
+          ¿Ya tienes cuenta? <a href="login.html">Inicia sesión</a>
+        </p>
+      </form>
+    </section>
+  </main>
+
+  <footer>© 2026 Happy Flight Airline · Demo</footer>
+  <script src="js/registro.js"></script>
+</body>
+</html>

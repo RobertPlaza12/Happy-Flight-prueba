@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Flight Airline - Reservar vuelo</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="encabezado">
+    <a href="index.html" class="marca" style="text-decoration: none;">Happy Flight <span>Airline</span></a>
+
+    <div class="acciones-sesion"></div>
+  </header>
+
+  <main>
+    <section class="seccion">
+      <h2>Reservar vuelo</h2>
+      <p class="subtitulo" id="resumen-vuelo">Cargando información del vuelo…</p>
+
+      <!-- Info del vuelo -->
+      <div id="info-vuelo" class="info-vuelo" hidden></div>
+
+      <!-- Mapa de asientos -->
+      <div class="asientos-wrapper">
+        <div class="asientos-leyenda">
+          <span><span class="leyenda-swatch libre"></span> Libre</span>
+          <span><span class="leyenda-swatch ocupado"></span> Ocupado</span>
+          <span><span class="leyenda-swatch seleccionado"></span> Seleccionado</span>
+        </div>
+
+        <div class="cabina-frente">✈️ Frente del avión</div>
+
+        <div id="mapa-asientos" class="mapa-asientos" role="grid" aria-label="Mapa de asientos"></div>
+      </div>
+
+      <!-- Resumen y acciones -->
+      <div class="reserva-acciones">
+        <p id="asiento-seleccionado" class="mensaje">Ningún asiento seleccionado.</p>
+        <div class="reserva-botones">
+          <a href="index.html" class="btn-sesion login">Cancelar</a>
+          <button id="btn-confirmar" class="boton" disabled>Confirmar reserva</button>
+        </div>
+      </div>
+
+      <p id="reserva-mensaje" class="auth-error" role="alert" hidden></p>
+    </section>
+  </main>
+
+    <!-- Modal de Pago -->
+  <div id="modal-pago" class="modal-overlay" hidden>
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Pago seguro</h3>
+        <button type="button" class="modal-close" id="btn-cerrar-modal">&times;</button>
+      </div>
+      
+      <div class="modal-body">
+        <!-- Resumen a pagar -->
+        <div class="pago-resumen">
+          <p><strong>Vuelo:</strong> <span id="modal-ruta"></span></p>
+          <p><strong>Asiento:</strong> <span id="modal-asiento"></span></p>
+          <p class="pago-total">Total a pagar: <span id="modal-precio"></span></p>
+        </div>
+
+        <!-- Sección de Millas (solo ejecutivos) -->
+        <div id="seccion-millas" class="pago-millas" hidden>
+          <label>
+            <input type="checkbox" id="chk-usar-millas">
+            Canjear millas acumuladas
+          </label>
+          <div id="detalle-millas" class="millas-detalle" hidden>
+            <p>Tienes <strong id="millas-disponibles">0</strong> millas disponibles.</p>
+            <label>Millas a canjear (100 millas = $1.00 RD):
+              <input type="number" id="input-millas" min="0" step="100" value="0">
+            </label>
+            <p>Descuento aplicado: <span id="descuento-millas">$0.00</span></p>
+          </div>
+        </div>
+
+        <!-- Formulario de Tarjeta -->
+        <form id="form-pago" class="form-tarjeta">
+          <label>Nombre en la tarjeta
+            <input type="text" id="tarjeta-nombre" placeholder="Ej. Juan Pérez" required>
+          </label>
+          
+          <label>Número de tarjeta
+            <input type="text" id="tarjeta-numero" placeholder="0000 0000 0000 0000" maxlength="19" required>
+          </label>
+          
+          <div class="tarjeta-row">
+            <label>Vencimiento (MM/AA)
+              <input type="text" id="tarjeta-vencimiento" placeholder="MM/AA" maxlength="5" required>
+            </label>
+            <label>CVV
+              <input type="text" id="tarjeta-cvv" placeholder="123" maxlength="3" required>
+            </label>
+          </div>
+
+          <p id="pago-error" class="auth-error" role="alert" hidden></p>
+          
+          <button type="submit" class="boton" id="btn-pagar" style="width: 100%; margin-top: 15px;">
+            Pagar <span id="btn-pagar-monto"></span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal de Éxito -->
+  <div id="modal-exito" class="modal-overlay" hidden>
+    <div class="modal-content" style="text-align: center;">
+      <div style="font-size: 3rem; margin-bottom: 10px;">🎉</div>
+      <h3 style="color: var(--azul);">¡Reserva Exitosa!</h3>
+      <p>Hemos enviado un correo de confirmación a <br><strong id="exito-email"></strong></p>
+      <p id="exito-millas" class="mensaje"></p>
+      <p>Serás redirigido a tus reservas en breve...</p>
+    </div>
+  </div>
+  <footer>© 2026 Happy Flight Airline · Demo</footer>
+  <script src="js/reserva.js"></script>
+</body>
+</html>

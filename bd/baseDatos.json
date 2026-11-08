@@ -1,0 +1,97 @@
+{
+  "vuelos": [
+    {
+      "id": "V001",
+      "origen": "Santo Domingo",
+      "destino": "Madrid",
+      "horaSalida": "08:30",
+      "fechaSalida": "2026-12-15",
+      "precio": 50500,
+      "asientosDisponibles": 78,
+      "filas": 4,
+      "columnas": 20,
+      "asientos": {
+        "A1": "libre", "A2": "ocupado", "A3": "libre", "A4": "libre",
+        "B1": "libre", "B2": "libre",  "B3": "libre", "B4": "ocupado"
+      }
+    },
+    {
+      "id": "V002",
+      "origen": "Santo Domingo",
+      "destino": "Miami",
+      "horaSalida": "14:00",
+      "fechaSalida": "2026-12-15",
+      "precio": 25850,
+      "asientosDisponibles": 55,
+      "filas": 4,
+      "columnas": 15,
+      "asientos": {
+        "A1": "ocupado", "A2": "ocupado", "A3": "libre", "A4": "libre",
+        "B1": "ocupado", "B2": "libre",  "B3": "ocupado", "B4": "ocupado"
+      }
+    },
+    {
+      "id": "V003",
+      "origen": "Santo Domingo",
+      "destino": "París",
+      "horaSalida": "10:15",
+      "fechaSalida": "2026-12-16",
+      "precio": 55600,
+      "asientosDisponibles": 76,
+      "filas": 4,
+      "columnas": 20,
+      "asientos": {
+        "A1": "ocupado", "A2": "ocupado", "A3": "libre", "A4": "libre",
+        "B1": "libre", "B2": "libre",  "B3": "ocupado", "B4": "ocupado"
+      }
+    },
+    {
+      "id": "V004",
+      "origen": "Santo Domingo",
+      "destino": "Lisboa",
+      "horaSalida": "10:15",
+      "fechaSalida": "2026-10-30",
+      "precio": 52000,
+      "asientosDisponibles": 76,
+      "filas": 4,
+      "columnas": 20,
+      "asientos": {
+        "A1": "ocupado", "A2": "ocupado", "A3": "libre", "A4": "libre",
+        "B1": "libre", "B2": "libre",  "B3": "ocupado", "B4": "ocupado"
+      }
+    }
+  ],
+  "usuarios": [
+    {
+      "id": "U001",
+      "nombre": "Juan Díaz",
+      "email": "juan.diaz@gmail.com",
+      "password": "123456abc",
+      "direccion": "santo domingo, republica dominicana",
+      "telefono": "809-123-4567",
+      "tipoCliente": "minorista",
+      "millas": null
+    },
+    {
+      "id": "U002",
+      "nombre": "Rosa Pérez",
+      "email": "rosa.perez@gmail.com",
+      "password": "contraseña123",
+      "direccion": "santo domingo, republica dominicana",
+      "telefono": "809-546-4897",
+      "tipoCliente": "ejecutivo",
+      "millas": 1000
+    }
+  ],
+  "reservas": [],
+  "agenteBoleto": [
+    {
+      "id": "A001",
+      "nombre": "Carlos Santana",
+      "email": "carlos.santana@happyFA.com",
+      "password": "contraseñaMuySegura",
+      "nivelPermisos": 1
+    }
+  ],
+  "pagos": []
+}

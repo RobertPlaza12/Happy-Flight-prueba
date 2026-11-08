@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Flight Airline - Inicio</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="encabezado">
+    <a href="index.html" class="marca" style="text-decoration: none;">Happy Flight <span>Airline</span></a>
+    <div class="acciones-sesion">
+      <a href="#login" class="btn-sesion login">Iniciar sesión</a>
+      <a href="#registro" class="btn-sesion registro">Registrarse</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div>
+        <p class="etiqueta">Vuela más lejos, sonríe más</p>
+        <h1>Tu próximo destino<br>está más cerca.</h1>
+        <p>Encuentra tu vuelo ideal con Happy Flight Airline.</p>
+        <a class="boton" href="#buscar">Buscar vuelos</a>
+      </div>
+    </section>
+
+    <section class="seccion" id="buscar">
+      <h2>Buscar vuelos</h2>
+      <p class="subtitulo">Consulta los vuelos disponibles por destino y hora de partida.</p>
+      <form id="form-busqueda" class="formulario busqueda">
+        <label>Origen
+          <input type="text" id="origen" placeholder="Ej. Santo Domingo" required>
+        </label>
+        <label>Destino
+          <input type="text" id="destino" placeholder="Ej. Madrid" required>
+        </label>
+        <label>Hora de partida (origen)
+          <input type="time" id="hora" required>
+        </label>
+        <label>Fecha (origen)
+          <input type="date" id="fecha" required>
+        </label>
+        <button class="boton" type="submit">Buscar</button>
+      </form>
+      <div id="resultados" class="resultados">
+        <p class="mensaje">Realiza una búsqueda para ver los vuelos.</p>
+      </div>
+    </section>
+
+    <div id="resultados" class="resultados">
+      
+    </div>
+  </main>
+
+  <footer>© 2026 Happy Flight Airline · Demo </footer>
+  <script src="js/index.js"></script>
+</body>
+</html>
