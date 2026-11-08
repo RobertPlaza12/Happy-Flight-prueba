@@ -187,7 +187,7 @@ function confirmarReserva() {
       inputMillas.value = 0;
     }
   } else {
-    if (seccionMillas) seccionMilas.hidden = true;
+    if (seccionMillas) seccionMillas.hidden = true;
     if (chkUsarMillas) chkUsarMillas.checked = false;
     if (detalleMillas) detalleMillas.hidden = true;
   }
